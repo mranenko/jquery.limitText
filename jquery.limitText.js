@@ -14,7 +14,7 @@
 			var defaultOptions = {
 				characterLimit: 240,
 				readLessText: "Read less",
-				readMoreText: "Reads more",
+				readMoreText: "Read more",
 				showEllipsis: true
 			};
 
@@ -38,11 +38,11 @@
 
 				// Add short text and "Read more" toggle
 				var expanderShort = $("<div/>", {
-					class: "ok-text-expander-short",
+					class: "text-short",
 					text: shortText
 				});
 				var expanderShortToggle = $("<a/>", {
-					class: "ok-text-expander-toggle",
+					class: "toggle",
 					text: options.readMoreText
 				});
 				expanderShort.append(expanderShortToggle);
@@ -50,11 +50,11 @@
 
 				// Add back full text and "Read less" toggle
 				var expanderFull = $("<div/>", {
-					class: "ok-text-expander-full",
+					class: "text-full",
 					html: fullHtml + " "
 				});
 				var expanderFullToggle = $("<a/>", {
-					class: "ok-text-expander-toggle",
+					class: "toggle",
 					text: options.readLessText
 				});
 				expanderFull.append(expanderFullToggle);
@@ -64,9 +64,9 @@
 		});
 
 		// Toggle more/less text functionality
-		$(".ok-text-expander-short").show();
-		$(".ok-text-expander-full").hide();
-		$(".ok-text-expander-toggle").click(function(){
+		$(".text-short").show();
+		$(".text-full").hide();
+		$(".toggle").click(function(){
 			$(this).parent().hide();
 			$(this).parent().siblings().show();
 		});
